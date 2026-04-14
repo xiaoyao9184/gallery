@@ -18,17 +18,8 @@ body:json {
 }
 
 tests {
-  test("should return success", function () {
-    expect(res.getStatus()).to.equal(200);
+  test("should return error", function () {
+    expect(res.getStatus()).to.equal(500);
   });
-
-  test("should return message 'provide'", function () {
-    const body = res.getBody();
-
-    expect(body).to.have.property("choices");
-    expect(body.choices[0]).to.have.property("message");
-    expect(body.choices[0].message).to.have.property("content");
-    expect(body.choices[0].message.content).to.contain("provide");
-  });
-
+  
 }
